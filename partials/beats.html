@@ -1,24 +1,40 @@
-<div ng-show="beats.length">
-  <h2>You got mad beats, yo. Click on 'em to assign a reporter:</h2>
+<div class="row" ng-show="beats.length">
+  <div class="col-md-12">
+    <h4>Search Your Beats:</h4>
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input ng-model="query" type="text" class="form-control" id="beats-name" placeholder="Search">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div ng-show="beats.length && filtered.length">
+  <h3>Here are your beats. Click on 'em to assign a reporter:</h3>
     <ul>
-      <li ng-repeat="item in beats">
+      <li ng-repeat="item in filtered = (beats | filter:query)">
         <a ui-sref='beats.reporters({ beatsId: item.id})'>{{item.name}}</a>
       </li>
     </ul>
+    <div ui-view></div>
 </div>
 
-<div ui-view></div>
+
+
+<div ng-show="beats.length && !filtered.length">
+  <h2>No matches</h2>
+</div>
 
 <div ng-show="!(beats.length)">
-  <h3>Drop a sick beat to get this reportin' started up in har, up in har.</h3>
+  <h3>No beats yet. Add one!</h3>
 </div>
 
 <div class="col-xs-12">
-  <h3>Drop a sick beat:</h3>
+  <h3>Add a beat:</h3>
   <form ng-submit="BeatsFactory.addBeat()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="BeatsFactory.beatName" placeholder="Nizzame this bizzeat">
+      <input type="text" ng-model="BeatsFactory.beatName" placeholder="New Beat Name">
     </div>
-    <button type="submit" class-"btn-btn primary">Drop it like it hot!</button>
+    <button type="submit" class-"btn-btn primary">Create Beat</button>
   </form>
 </div>

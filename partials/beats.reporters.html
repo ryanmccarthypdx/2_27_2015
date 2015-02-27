@@ -1,5 +1,5 @@
 <div ng-show="beat.reporters.length">
-  <h3>Reporters Assizzigned to {{ beat.name }} (click on the name for more details)</h3>
+  <h3>Reporters Assigned to {{ beat.name }} (click on the name for more details)</h3>
   <ul>
     <li ng-repeat="item in beat.reporters"><span ng-click="details = true">{{ item.name }}</span>
       <div ng-show="details" ng-click="details = false">
@@ -16,13 +16,13 @@
   <h3>Assign a reporter to {{ beat.name }}</h3>
   <form ng-submit="addReporter()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="reporterName" class="form-control" placeholder="What's their handle?">
+      <input type="text" ng-model="reporterName" class="form-control" placeholder="Reporter Name">
     </div>
     <div class="form-group">
-      <input type="text" ng-model="reporterBday" class="form-control" placeholder="What's their birthday?">
+      <input type="text" ng-model="reporterBday" class="form-control" placeholder="Birthday">
     </div>
     <div class="form-group">
-      <input type="text" ng-model="reporterTerm" class="form-control" placeholder="How long they been around?">
+      <input type="text" ng-model="reporterTerm" class="form-control" placeholder="Years of Service">
     </div>
     <button type="submit" class="btn btn-success">Assign this reporter</button>
   </form>
