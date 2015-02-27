@@ -1,0 +1,20 @@
+<div ng-show="beats.length">
+  <h2>Got Mad Beats, yo. Peep 'em:</h2>
+    <ul>
+      <li ng-repeat="item in beats"><a ui-sref"beats.reporters({ beatId: item.id })">{{item.name}}</a>
+    </ul>
+</div>
+
+<div ng-show="!(beats.length)">
+  <h3>Beats be whack, yo. Drop a sick beat to get this party started up in har, up in har.</h3>
+</div>
+
+<div class="col-xs-12">
+  <h3>Drop a sick beat:</h3>
+  <form ng-submit="BeatsFactory.addBeat()" class="form-inline" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="BeatsFactory.beatName" placeholder="Nizzame this bizzeat">
+    </div>
+    <button type="submit" class-"btn-btn primary">Drop it like it hot!</button>
+  </form>
+</div>
