@@ -1,12 +1,16 @@
 <div ng-show="beats.length">
-  <h2>Got Mad Beats, yo. Peep 'em:</h2>
+  <h2>You got mad beats, yo. Peep 'em to assign a reporter:</h2>
     <ul>
-      <li ng-repeat="item in beats"><a ui-sref"beats.reporters({ beatId: item.id })">{{item.name}}</a>
+      <li ng-repeat="item in beats">
+        <a ui-sref='beats.reporters({ beatsId: item.id})'>{{item.name}} || {{item.id}}</a>
+      </li>
     </ul>
 </div>
 
+<div ui-view></div>
+
 <div ng-show="!(beats.length)">
-  <h3>Beats be whack, yo. Drop a sick beat to get this party started up in har, up in har.</h3>
+  <h3>Drop a sick beat to get this reportin' started up in har, up in har.</h3>
 </div>
 
 <div class="col-xs-12">

@@ -1,0 +1,24 @@
+<div ng-show="beats.reporters.length">
+  <h3>Reporters Assizzigned to {{ beat.name }}</h3>
+  <ul>
+    <li ng-repeat="item in beat.reporters"><a ui-sref="###########################">
+      {{ item.name }}
+    </a></li>
+  </ul>
+</div>
+
+<div>
+  <h3>Assign a reporter to {{ beat.name }}</h3>
+  <form ng-submit="addReporter()" class="form-inline" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="reporterName" class="form-control" placeholder="What's their handle?">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="reporterBday" class="form-control" placeholder="What's their birthday?">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="reporterTerm" class="form-control" placeholder="How long they been around?">
+    </div>
+    <button type="submit" class="btn btn-success">Assign this reporter</button>
+  </form>
+</div>
