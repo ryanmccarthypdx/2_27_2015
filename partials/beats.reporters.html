@@ -1,9 +1,14 @@
-<div ng-show="beats.reporters.length">
-  <h3>Reporters Assizzigned to {{ beat.name }}</h3>
+<div ng-show="beat.reporters.length">
+  <h3>Reporters Assizzigned to {{ beat.name }} (click on the name for more details)</h3>
   <ul>
-    <li ng-repeat="item in beat.reporters"><a ui-sref="###########################">
-      {{ item.name }}
-    </a></li>
+    <li ng-repeat="item in beat.reporters"><span ng-click="details = true">{{ item.name }}</span>
+      <div ng-show="details" ng-click="details = false">
+        <ul>
+          <li>Birthday: {{item.birthday}}</li>
+          <li>Years of Service: {{item.term}}</li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </div>
 

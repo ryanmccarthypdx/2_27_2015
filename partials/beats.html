@@ -1,8 +1,8 @@
 <div ng-show="beats.length">
-  <h2>You got mad beats, yo. Peep 'em to assign a reporter:</h2>
+  <h2>You got mad beats, yo. Click on 'em to assign a reporter:</h2>
     <ul>
       <li ng-repeat="item in beats">
-        <a ui-sref='beats.reporters({ beatsId: item.id})'>{{item.name}} || {{item.id}}</a>
+        <a ui-sref='beats.reporters({ beatsId: item.id})'>{{item.name}}</a>
       </li>
     </ul>
 </div>
